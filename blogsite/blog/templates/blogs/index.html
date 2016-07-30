@@ -1,0 +1,9 @@
+{% if latest_articles_list %}
+	<ul>
+	{% for article in latest_articles_list %}
+		<li><a href="/blog/{{article.id}}/">{{article.title}}</a></li>
+	{% endfor %}
+	</ul>
+{% else %}	
+	<p>No articles are avaliable</p>
+{% endif %}

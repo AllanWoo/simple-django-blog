@@ -1,8 +1,14 @@
 from django.contrib import admin
-from .models import Articles
+from .models import Article,Comment,Category,Tag
 # Register your models here.
 
 class ArticlePostAdmin(admin.ModelAdmin):
-	list_display = ('title','date')
+	list_display = ('title','date','category')
 
-admin.site.register(Articles,ArticlePostAdmin)
+class CommentPostAdmin(admin.ModelAdmin):
+	list_display = ('article','nickname','email','date')
+
+admin.site.register(Article,ArticlePostAdmin)
+admin.site.register(Comment,CommentPostAdmin)
+admin.site.register(Category)
+admin.site.register(Tag)

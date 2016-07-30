@@ -7,3 +7,10 @@
 {% else %}	
 	<p>No articles are avaliable</p>
 {% endif %}
+{% if category_list %}
+	<ul>
+		{% for category in category_list %}
+		<li><a href="/blog/cat={{category.id}}/">{{category.name}}</li>
+		{% endfor %}
+	</ul>
+{% endif %}

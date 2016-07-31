@@ -1,5 +1,10 @@
+{% load threadedcomments_tags %}
 <h1>{{article.title}}</h1>
 <h2>{{article.date}}</h2>
 <p>{{article.body}}</p>
 <p>{{article.category.name}}</p>
 <!-- <p>{{article.tags.name}}</p> -->
+
+<h5>{{ article.title }}的评论:</h5>
+{% render_comment_list for article %}
+{% render_comment_form for article %}

@@ -29,13 +29,13 @@ class Article(models.Model):
 	def __str__(self):
 		return self.title
 
-@python_2_unicode_compatible
-class Comment(models.Model):
-	title = models.CharField(u'标题',max_length = 50)
-	article = models.ForeignKey(Article, verbose_name = u'博客')
-	nickname = models.CharField(u'昵称', max_length = 20)
-	email = models.CharField('e-mail',max_length = 50)
-	content = models.CharField(u'内容', max_length = 140)
-	date = models.DateTimeField(u'时间')
-	def __str__(self):
-		return self.title;
+# @python_2_unicode_compatible
+# class Comment(models.Model):
+# 	title = models.CharField(u'标题',max_length = 50)
+# 	article = models.ForeignKey(Article, verbose_name = u'博客')
+# 	nickname = models.CharField(u'昵称', max_length = 20)
+# 	email = models.CharField('e-mail',max_length = 50)
+# 	content = models.CharField(u'内容', max_length = 140)
+# 	date = models.DateTimeField(u'时间')
+# 	def __str__(self):
+# 		return self.title;

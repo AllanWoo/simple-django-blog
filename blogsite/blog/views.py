@@ -2,7 +2,7 @@ from django.core.urlresolvers import reverse
 from django.http import Http404, HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.template import loader
-from .models import Article,Category,Tag,Comment
+from .models import Article,Category,Tag
 
 # Create your views here.
 

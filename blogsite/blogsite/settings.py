@@ -42,7 +42,11 @@ INSTALLED_APPS = [
     # 'django.contrib.comments',
     'threadedcomments',
     'django_comments',
-    'django.contrib.sites',]
+    'django.contrib.sites',
+    'ckeditor',
+    # 'zinnia',
+    # 'zinnia_ckeditor',
+    ]
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
@@ -128,3 +132,27 @@ STATIC_URL = '/static/'
 COMMENTS_APP = 'threadedcomments'
 
 SITE_ID = 1
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+CKEDITOR_UPLOAD_PATH = "article_images"
+
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': (
+            ['div','Source','-','Save','NewPage','Preview','-','Templates'], 
+            ['Cut','Copy','Paste','PasteText','PasteFromWord','-','Print','SpellChecker','Scayt'], 
+            ['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'], 
+            ['Form','Checkbox','Radio','TextField','Textarea','Select','Button', 'ImageButton','HiddenField'], 
+            ['Bold','Italic','Underline','Strike','-','Subscript','Superscript'], 
+            ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote'], 
+            ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'], 
+            ['Link','Unlink','Anchor','CodeSnippet'], 
+            ['Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak'], 
+            ['Styles','Format','Font','FontSize'], 
+            ['TextColor','BGColor'], 
+            ['Maximize','ShowBlocks','-','About', 'pbckcode'],
+        ),
+    }
+}

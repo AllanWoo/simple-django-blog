@@ -1,7 +1,7 @@
 {% load threadedcomments_tags %}
 <h1>{{article.title}}</h1>
 <h2>{{article.date}}</h2>
-<p>{{article.body}}</p>
+<p>{{article.body|safe}}</p>
 <p>{{article.category.name}}</p>
 <!-- <p>{{article.tags.name}}</p> -->
 

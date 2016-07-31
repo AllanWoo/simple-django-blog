@@ -21,4 +21,5 @@ urlpatterns = [
 	url(r'^blog/',include('blog.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^comments/', include('django_comments.urls')),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ]

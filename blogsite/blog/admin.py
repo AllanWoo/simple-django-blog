@@ -1,6 +1,8 @@
 from django.contrib import admin
 from .models import Article,Category,Tag
 from django_comments.models import Comment
+from ckeditor.fields import RichTextField
+
 
 # Register your models here.
 

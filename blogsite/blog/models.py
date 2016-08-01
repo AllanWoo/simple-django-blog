@@ -24,7 +24,7 @@ class Article(models.Model):
 	body = RichTextField(u'正文')
 	date = models.DateTimeField(u'发布时间')
 	category = models.ForeignKey(Category, verbose_name=u'分类')
-	tags = models.ManyToManyField(Tag, verbose_name = u'标签')
+	tags = models.ManyToManyField(Tag, verbose_name = u'标签',blank=True)
 
 	def __str__(self):
 		return self.title

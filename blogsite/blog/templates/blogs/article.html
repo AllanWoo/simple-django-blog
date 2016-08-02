@@ -1,6 +1,11 @@
 {% load threadedcomments_tags %}
 <h1>{{article.title}}</h1>
 <h2>{{article.date}}</h2>
+<h5>
+{% for tag in tags %}
+<a href = "/blog/tag={{tag.id}}">{{tag.name}}</a> 
+{% endfor %}
+</h5>
 <p>{{article.body|safe}}</p>
 <p>{{article.category.name}}</p>
 <!-- <p>{{article.tags.name}}</p> -->

@@ -19,11 +19,17 @@ def index(request):
 def article(request,article_id):
 	try:
 		article = Article.objects.get(pk=article_id)
+		tags = article.tags.all()
 	except Article.DoesNotExist:
 		raise Http404("Article does not exist")
-	return render(request, 'blogs/article.html', {'article': article})
+	return render(request, 'blogs/article.html', {'article': article,'tags':tags})
 
 def category(request,category_id):
 	cur_cat = Category.objects.get(pk = category_id)
 	articles = Article.objects.filter(category = cur_cat)
 	return render(request, 'blogs/category.html', {'articles': articles})
+
+def tag(request,tag_id):
+	# cur_tag = Tag.objects.get(pk = tag_id)
+	articles = Article.objects.filter(tags__id__contains = tag_id)
+	return render(request, 'blogs/tag.html', {'articles': articles})

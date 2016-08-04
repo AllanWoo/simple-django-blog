@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="zh">
+<mata content="text/html" charset="utf-8">
+<link rel="stylesheet" type="text/css" href="../../static/css/style.css"/>
+<head>
+	<title>{{cat.name}}</title>
+	<div class="head" style="height:100px;font-size:50px">分类为{{cat.name}}的博客</div>
+</head>
+<div class="last">
 {% if articles %}
 	<ul>
 	{% for article in articles %}
@@ -7,3 +16,5 @@
 {% else %}	
 	<p>No articles are avaliable</p>
 {% endif %}
+</div>
+</html>

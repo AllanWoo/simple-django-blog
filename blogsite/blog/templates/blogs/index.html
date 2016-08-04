@@ -1,16 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<mata content="text/html" charset="utf-8">
+<link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<div class="body">
+<head>
+	<title>首页</title>
+	<div class="head"><div style="font-size:100px">WELCOME 欢迎</div><p style="line-height:5% ; font-size:40px">欢迎来到我的博客</p></div>
+</head>
+<div class="last">
 {% if latest_articles_list %}
+<h2>最近博客</h2>
 	<ul>
 	{% for article in latest_articles_list %}
-		<li><a href="/blog/{{article.id}}/">{{article.title}}</a></li>
+		<li><a href="/blog/{{article.id}}/">{{article.title}}</a>                    {{article.date}}</li>
 	{% endfor %}
 	</ul>
 {% else %}	
 	<p>No articles are avaliable</p>
 {% endif %}
+</div>
+<div class="cat">
 {% if category_list %}
+<h2>标签</h2>
 	<ul>
 		{% for category in category_list %}
 		<li><a href="/blog/cat={{category.id}}/">{{category.name}}</li>
 		{% endfor %}
 	</ul>
 {% endif %}
+</div>
+</div>
+</html>

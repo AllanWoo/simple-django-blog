@@ -1,15 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+<mata content="text/html" charset="utf-8">
+<link rel="stylesheet" type="text/css" href="../../static/css/style.css"/>
+<head><title>{{article.title}} -- 我的博客</title></head>
 {% load threadedcomments_tags %}
+<div class="head">
 <h1>{{article.title}}</h1>
 <h2>{{article.date}}</h2>
-<h5>
+<h2>
+标签：
 {% for tag in tags %}
 <a href = "/blog/tag={{tag.id}}">{{tag.name}}</a> 
 {% endfor %}
-</h5>
+</h2>
+</div>
+<div class="text">
 <p>{{article.body|safe}}</p>
-<p>{{article.category.name}}</p>
+<p></p>
+<p>该文章的标签：{{article.category.name}}</p>
 <!-- <p>{{article.tags.name}}</p> -->
-
+</div>
+<div class="comment">
 <h5>{{ article.title }}的评论:</h5>
 {% render_comment_list for article %}
 {% render_comment_form for article %}
+</div>
+</html>

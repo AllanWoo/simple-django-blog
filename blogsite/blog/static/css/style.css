@@ -1,0 +1,54 @@
+div{
+	min-width: 800px;
+}
+.head{
+	height: 250px;
+	text-align: left;
+	color: white;
+ 	font-family: "微软雅黑","黑体",serif;
+	background-color: #2fa8e1
+}
+
+.head a{
+	text-align: left;
+	color: white;
+}
+
+.last{
+ 	font-family: "微软雅黑","黑体",serif;
+	min-width: 800px;
+	background-color: #aaaaaa;
+	font-size: 30px;
+	color: white;
+}
+
+.last a{
+	color: white;
+	text-decoration: none;
+}
+
+
+.cat{
+ 	font-family: "微软雅黑","黑体",serif;
+	min-width: 800px;
+	background-color: #aaaaaa;
+	font-size: 30px;
+	color: white;
+}
+
+.cat a{
+	color: white;
+	text-decoration: none;
+}
+
+.text{
+	background-color: #f0e18c;
+}
+
+.comment{
+ 	font-family: "微软雅黑","黑体",serif;
+	min-width: 800px;
+	background-color: #aaaaaa;
+	font-size: 15px;
+	color: white;
+}

@@ -1,48 +1,122 @@
-div{
-	min-width: 800px;
+*{
+	margin: 0;
+	padding: 0;
 }
-.head{
-	height: 250px;
-	text-align: left;
-	color: white;
+
+body{
+	width: 1000px;
+	min-width: 800px;
+	margin: 0 auto;
  	font-family: "微软雅黑","黑体",serif;
+}
+
+ul{	list-style-type: none;}
+
+div#head{
+	height: 150px;
 	background-color: #2fa8e1
 }
 
-.head a{
+#head h1{
 	text-align: left;
+	text-indent: 20px;
+	padding: 20px;
 	color: white;
-}
-
-.last{
  	font-family: "微软雅黑","黑体",serif;
-	min-width: 800px;
-	background-color: #aaaaaa;
-	font-size: 30px;
-	color: white;
 }
 
-.last a{
+#head ul{
+/*	border:3px dotted white; 
+*/	padding: 20px 40px;
+	
+}
+
+#head ul li{
+	display: inline;
 	color: white;
+	width:20%;
+	font-size: 20px;
+ 	font-family: "微软雅黑","黑体",serif;
+}
+
+a{
 	text-decoration: none;
 }
 
+#head a:visited{color:white;}
 
-.cat{
- 	font-family: "微软雅黑","黑体",serif;
-	min-width: 800px;
-	background-color: #aaaaaa;
-	font-size: 30px;
-	color: white;
+#head a:hover{
+	background-color:white;
+	color:#2fa8e1;
 }
 
-.cat a{
-	color: white;
+#wrap{
+	margin: 20px auto;
+	padding: 20px;
+	background-color: #fafaf0;
+}
+
+li.latestblog{
+	width: 1000px;
+	min-width: 800px;
+	height: 200px;
+	overflow: hidden;
+	margin-bottom: 20px;
+	background-color: #eee;
+	position: relative;
+	padding-top: 20px;
+ 	font-family: "微软雅黑","黑体",serif;
+}
+
+li.latestblog h2{text-indent: 20px;}
+
+li.latestblog a{
+	width:100px;
+	/*border: 10px solid black;*/
+}
+
+li.latestblog a:visited{color: #000;}
+
+li.latestblog .part{
+/*	border: 1px solid red;
+*/	height:120px;
+	overflow: hidden;
+	margin:10px; 
+}
+
+li.latestblog span#right{
+	position: absolute;
+	right:20px;
+	top: 20px;
+}
+
+ul.list{
+	width:100%;
+	background-color: #eee;
 	text-decoration: none;
 }
 
-.text{
-	background-color: #f0e18c;
+ul.list li{
+	height: 50px;
+	font-size: 20px;
+	line-height: 20px;
+	position: relative;
+	padding: 15px;
+}
+
+ul.list span{
+	position: absolute;
+	right: 15px;
+}
+
+ul.list a:visited{
+	color: #000;
+	text-indent: 15px;
+}
+
+footer{
+	text-align: center;
+	font-size: 10px;
 }
 
 .comment{
@@ -50,5 +124,21 @@ div{
 	min-width: 800px;
 	background-color: #aaaaaa;
 	font-size: 15px;
+	padding: 20px;
 	color: white;
 }
+
+#wrap .article{
+	text-indent: 20px;
+	line-height: 2;
+}
+
+#wrap .maintext{
+	padding: 20px;
+	text-indent: 20px;
+	line-height: 1;
+	min-height: 600px;
+}
+
+#wrap a:visited{color:black;}
+#wrap a:hover{color:#f32;}

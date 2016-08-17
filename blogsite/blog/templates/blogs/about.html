@@ -2,8 +2,8 @@
 <html>
 <head>
 	<mata content="text/html" charset="utf-8">
-	<title>标签为{{tag.name}}的博文</title>
-<link rel="stylesheet" type="text/css" href="../../static/css/style.css"/>
+	<title>关于</title>
+	<link rel="stylesheet" type="text/css" href="../../static/css/style.css"/>
 </head>
 <body>
 	<div id="head">
@@ -16,19 +16,7 @@
 		</ul>
 	</div>	
 	<div id="wrap">
-		{% if articles %}
-		<ul class="list">
-		<h2>标签为{{tag.name}}的博文:</h2>
-			{% for a in articles %}
-			<li>
-				<a href="/blog/{{a.id}}">{{a.title}}</a>
-				<span>{{a.date}}</span>
-			</li>
-			{% endfor%}
-		</ul>
-		{% else %}
-		<h2>该标签没有文章</h2>
-		{% endif %}
+		<p>这是我做的一个博客系统</p>
 	</div>
 	<footer><a href="https://github.com/TonitruiAula">GitHub@TonitruiAula</a> All Right Reserved.2016</footer>
 </body>

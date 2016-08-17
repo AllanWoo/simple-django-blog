@@ -1,28 +1,43 @@
 <!DOCTYPE html>
 <html lang="zh">
-<mata content="text/html" charset="utf-8">
-<link rel="stylesheet" type="text/css" href="../../static/css/style.css"/>
-<head><title>{{article.title}} -- 我的博客</title></head>
+<head>
+	<mata content="text/html" charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../../static/css/style.css"/>
+	<title>{{article.title}} -- 我的博客</title>
+</head>
+
 {% load threadedcomments_tags %}
-<div class="head">
-<h1>{{article.title}}</h1>
-<h2>{{article.date}}</h2>
-<h2>
-标签：
-{% for tag in tags %}
-<a href = "/blog/tag={{tag.id}}">{{tag.name}}</a> 
-{% endfor %}
-</h2>
-</div>
-<div class="text">
-<p>{{article.body|safe}}</p>
-<p></p>
-<p>该文章的标签：{{article.category.name}}</p>
-<!-- <p>{{article.tags.name}}</p> -->
-</div>
-<div class="comment">
-<h5>{{ article.title }}的评论:</h5>
-{% render_comment_list for article %}
-{% render_comment_form for article %}
-</div>
+
+<body>
+	<div id="head">
+		<h1>我的博客</h1>
+		<ul>
+			<li><a href="/">首页</a></li>
+			<li><a href="/blog/allblogs">博客列表</a></li>
+			<li><a href="/blog/cat">博客分类</a></li>
+			<li><a href="/blog/about">关于</a></li>
+		</ul>
+	</div>	
+	<div id="wrap">
+		<div class="article">
+			<h1>{{article.title}}</h1>
+			<div id="info">
+				<h2>{{article.date}}</h2>
+				<h2>
+				标签：
+				{% for tag in tags %}
+				<a href = "/blog/tag={{tag.id}}">{{tag.name}}</a> 
+				{% endfor %}
+				</h2>
+			</div>
+			<div class="maintext">{{article.body|safe}}</div>
+		</div>
+		<div class="comment">
+		<h5>{{ article.title }}的评论:</h5>
+		{% render_comment_list for article %}
+		{% render_comment_form for article %}
+		</div>
+	</div>
+	<footer><a href="https://github.com/TonitruiAula">GitHub@TonitruiAula</a> All Right Reserved.2016</footer>
+</body>
 </html>

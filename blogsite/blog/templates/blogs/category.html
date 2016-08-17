@@ -1,20 +1,35 @@
 <!DOCTYPE html>
-<html lang="zh">
-<mata content="text/html" charset="utf-8">
-<link rel="stylesheet" type="text/css" href="../../static/css/style.css"/>
+<html>
 <head>
-	<title>{{cat.name}}</title>
-	<div class="head" style="height:100px;font-size:50px">分类为{{cat.name}}的博客</div>
+	<mata content="text/html" charset="utf-8">
+	<title>类别为{{cat.name}}的博文</title>
+<link rel="stylesheet" type="text/css" href="../../static/css/style.css"/>
 </head>
-<div class="last">
-{% if articles %}
-	<ul>
-	{% for article in articles %}
-		<li><a href="/blog/{{article.id}}/">{{article.title}}</a></li>
-	{% endfor %}
-	</ul>
-{% else %}	
-	<p>No articles are avaliable</p>
-{% endif %}
-</div>
+<body>
+	<div id="head">
+		<h1>我的博客</h1>
+		<ul>
+			<li><a href="/">首页</a></li>
+			<li><a href="/blog/allblogs">博客列表</a></li>
+			<li><a href="/blog/cat">博客分类</a></li>
+			<li><a href="/blog/about">关于</a></li>
+		</ul>
+	</div>	
+	<div id="wrap">
+		{% if articles %}
+		<ul class="list">
+		<h2>类别为{{cat.name}}的博文:</h2>
+			{% for a in articles %}
+			<li>
+				<a href="/blog/{{a.id}}">{{a.title}}</a>
+				<span>{{a.date}}</span>
+			</li>
+			{% endfor%}
+		</ul>
+		{% else %}
+		<h2>该类别没有文章</h2>
+		{% endif %}
+	</div>
+	<footer><a href="https://github.com/TonitruiAula">GitHub@TonitruiAula</a> All Right Reserved.2016</footer>
+</body>
 </html>

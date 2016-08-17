@@ -8,8 +8,10 @@ from .models import Article,Category,Tag
 
 def index(request):
 	latest_articles_list = Article.objects.order_by('-date')
+	if len(latest_articles_list)>5:
+		latest_articles_list = latest_articles_list[-5:]
 	category_list = Category.objects.order_by('-name')
-	template = loader.get_template('blogs/index.html')
+	#template = loader.get_template('blogs/index.html')
 	context = {
 		'latest_articles_list' : latest_articles_list,
 		'category_list' : category_list,
@@ -33,3 +35,17 @@ def tag(request,tag_id):
 	cur_tag = Tag.objects.get(pk = tag_id)
 	articles = Article.objects.filter(tags__id__contains = tag_id)
 	return render(request, 'blogs/tag.html', {'articles': articles,'tag':cur_tag})
+
+def all(request):
+	articles_list = Article.objects.order_by('-date')
+	context = {
+		'articles_list' : articles_list,
+	}
+	return render(request,'blogs/all.html',context)
+
+def cat_menu(request):
+	cat = Category.objects.order_by('-name')
+	return render(request, 'blogs/cat.html', {'cat' : cat})
+
+def about(request):
+	return render(request,'blogs/about.html')

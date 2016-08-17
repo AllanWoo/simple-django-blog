@@ -43,7 +43,7 @@ a{
 	text-decoration: none;
 }
 
-#head a:visited{color:white;}
+#head a,#head a:visited{color:white;}
 
 #head a:hover{
 	background-color:white;
@@ -140,5 +140,5 @@ footer{
 	min-height: 600px;
 }
 
-#wrap a:visited{color:black;}
+#wrap a,#wrap a:visited{color:black;}
 #wrap a:hover{color:#f32;}

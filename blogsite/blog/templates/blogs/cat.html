@@ -4,6 +4,7 @@
 	<mata content="text/html" charset="utf-8">
 	<title>博文分类</title>
 	<link rel="stylesheet" type="text/css" href="../../static/css/style.css"/>
+	<script type="text/javascript" src="../../static/javascript/bdshare.js"></script>
 </head>
 <body>
 	<div id="head">
@@ -14,6 +15,14 @@
 			<li><a href="/blog/cat">博客分类</a></li>
 			<li><a href="/blog/about">关于</a></li>
 		</ul>
+		<div class="bdsharebuttonbox">
+			<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+			<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+			<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+			<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+			<a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址">
+			<a href="#" class="bds_more" data-cmd="more"></a>
+		</div>
 	</div>	
 	<div id="wrap">
 		{% if cat %}
@@ -23,7 +32,7 @@
 			{% endfor%}
 		</ul>
 		{% endif %}
+		<footer><a href="https://github.com/TonitruiAula">GitHub@TonitruiAula</a> All Right Reserved.2016</footer>
 	</div>
-	<footer><a href="https://github.com/TonitruiAula">GitHub@TonitruiAula</a> All Right Reserved.2016</footer>
 </body>
 </html>

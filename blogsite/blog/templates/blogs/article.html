@@ -4,6 +4,7 @@
 	<mata content="text/html" charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="../../static/css/style.css"/>
 	<title>{{article.title}} -- 我的博客</title>
+	<script type="text/javascript" src="../../static/javascript/bdshare.js"></script>
 </head>
 
 {% load threadedcomments_tags %}
@@ -17,6 +18,14 @@
 			<li><a href="/blog/cat">博客分类</a></li>
 			<li><a href="/blog/about">关于</a></li>
 		</ul>
+		<div class="bdsharebuttonbox">
+			<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+			<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+			<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+			<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+			<a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址">
+			<a href="#" class="bds_more" data-cmd="more"></a>
+		</div>
 	</div>	
 	<div id="wrap">
 		<div class="article">
@@ -31,13 +40,13 @@
 				</h2>
 			</div>
 			<div class="maintext">{{article.body|safe}}</div>
-		</div>
 		<div class="comment">
 		<h5>{{ article.title }}的评论:</h5>
 		{% render_comment_list for article %}
 		{% render_comment_form for article %}
 		</div>
+
+		<footer><a href="https://github.com/TonitruiAula">GitHub@TonitruiAula</a> All Right Reserved.2016</footer>
 	</div>
-	<footer><a href="https://github.com/TonitruiAula">GitHub@TonitruiAula</a> All Right Reserved.2016</footer>
 </body>
 </html>

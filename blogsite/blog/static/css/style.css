@@ -71,8 +71,10 @@ li.latestblog{
 	margin-bottom: 20px;
 	background-color: #eee;
 	position: relative;
+	line-height: 60px;
 	padding-top: 20px;
  	font-family: "微软雅黑","黑体",serif;
+ 	font-size: 20px;
 }
 
 li.latestblog h2{text-indent: 20px;}
@@ -137,7 +139,12 @@ footer{
 
 #wrap .article{
 	text-indent: 20px;
-	line-height: 2;
+	line-height: 3;
+}
+
+#wrap .article p{
+	line-height: 50px;
+	font-size: 20px;
 }
 
 #wrap .maintext{
@@ -168,3 +175,23 @@ div.bdsharebuttonbox{
 	font-size: 24px;
 	border-radius: 5px;
 }
+
+div#searcharea{
+	color: white;
+	margin: 0 auto;
+	position: relative;
+	width: 80%;
+	height: 30px;
+}
+
+div#searcharea #content{
+	width: 60%;
+	height: 25px;
+	font-size: 20px;
+}
+
+
+div#searcharea #search{
+	float: right;
+}
+

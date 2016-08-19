@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <mata content="text/html" charset="utf-8">
+    <title>搜索结果</title>
+    <link rel="stylesheet" type="text/css" href="../../static/css/style.css"/>
+    <script type="text/javascript" src="../../static/javascript/bdshare.js"></script>
+    <script type="text/javascript" src="../../static/javascript/submit.js"></script>
+</head>
+<body>
+    <div id="head">
+        <h1>我的博客</h1>
+        <ul>
+            <li><a href="/">首页</a></li>
+            <li><a href="/blog/allblogs">博客列表</a></li>
+            <li><a href="/blog/cat">博客分类</a></li>
+            <li><a href="/blog/about">关于</a></li>
+        </ul>
+        <div id="searcharea">
+            <form method="get" action=".">
+                <input type="text" id="content"></input>
+                <h3 id="search" onclick="submit()">搜索</h3>
+            </form>
+        </div>
+        <div class="bdsharebuttonbox">
+            <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+            <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+            <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+            <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址">
+            <a href="#" class="bds_more" data-cmd="more"></a>
+        </div>
+    </div>  
+    <div id="wrap">
+           {% if query %}
+        <h1>搜索结果</h2>
+        {% for result in page.object_list %}
+            <p>
+                <h2><a href="/blog/{{result.object.id}}">{{ result.object.title }}</a></h2>
+            </p>
+        {% empty %}
+            <p>没有找到。</p>
+        {% endfor %}
+            {% if page.has_previous or page.has_next %}
+                <div>
+                    {% if page.has_previous %}<a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">{% endif %}&laquo; Previous{% if page.has_previous %}</a>{% endif %}
+                    |
+                    {% if page.has_next %}<a href="?q={{ query }}&amp;page={{ page.next_page_number }}">{% endif %}Next &raquo;{% if page.has_next %}</a>{% endif %}
+                </div>
+            {% endif %}
+        {% else %}
+            {# Show some example queries to run, maybe query syntax, something else? #}
+        {% endif %}
+       <footer><a href="https://github.com/TonitruiAula">GitHub@TonitruiAula</a> All Right Reserved.2016</footer>
+    </div>
+</body>
+</html>

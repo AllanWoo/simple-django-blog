@@ -5,6 +5,7 @@
 	<title>博文分类</title>
 	<link rel="stylesheet" type="text/css" href="../../static/css/style.css"/>
 	<script type="text/javascript" src="../../static/javascript/bdshare.js"></script>
+	<script type="text/javascript" src="../../static/javascript/submit.js"></script>
 </head>
 <body>
 	<div id="head">
@@ -15,6 +16,12 @@
 			<li><a href="/blog/cat">博客分类</a></li>
 			<li><a href="/blog/about">关于</a></li>
 		</ul>
+		<div id="searcharea">
+		    <form method="get" action=".">
+		    	<input type="text" id="content"></input>
+		    	<h3 id="search" onclick="submit()">搜索</h3>
+		    </form>
+		</div>
 		<div class="bdsharebuttonbox">
 			<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
 			<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
